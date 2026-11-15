@@ -1,0 +1,12 @@
+{
+	# Certificats HTTPS uniquement via Let's Encrypt (gratuits, renouvelés automatiquement).
+	# Remplacer par ton adresse mail : Let's Encrypt t'y prévient si un renouvellement échoue.
+	email toi@exemple.fr
+	acme_ca https://acme-v02.api.letsencrypt.org/directory
+}
+
+# Remplacer prono.exemple.fr par ton nom de domaine OVH (ou sous-domaine).
+prono.exemple.fr {
+	encode gzip
+	reverse_proxy 127.0.0.1:3000
+}

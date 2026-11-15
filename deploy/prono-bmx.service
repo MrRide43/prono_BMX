@@ -1,0 +1,24 @@
+[Unit]
+Description=BMX World Pronos
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=alex
+WorkingDirectory=/home/alex/prono
+ExecStart=/usr/bin/node server.js
+Environment=PORT=3000
+Environment=HOST=127.0.0.1
+Environment=TRUST_PROXY=1
+Environment=DATA_FILE=/home/alex/prono/prono-data/data.json
+Restart=always
+RestartSec=3
+# Durcissement : le service ne peut écrire que dans le dossier des données
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/alex/prono/prono-data
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+{
+  "name": "prono-bmx",
+  "version": "1.0.0",
+  "description": "UCI BMX World Pronos 2026 - jeu de pronostics entre amis",
+  "private": true,
+  "main": "server.js",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  }
+}
